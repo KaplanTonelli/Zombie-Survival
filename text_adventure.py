@@ -1,10 +1,11 @@
 """
-Implements the text-base adventure experience:
+Implements the text-based adventure experience:
 Zombie Survival
 Kaplan Tonelli - September 2026
 """
-def killed_janitor(item: str, money : str, bullets : str, gun : str,been_closet:bool=False) -> None:
-    print("""You look inside the closet and find 2 ammo, and another $350""")
+def killed_janitor(item: str, money: str, bullets: str, gun: str, been_closet: bool=False) -> None:
+    print("""You look inside the closet and find 2 ammo, and another $350
+    """)
     money+=350
     bullets+=2
 
@@ -21,8 +22,9 @@ def killed_janitor(item: str, money : str, bullets : str, gun : str,been_closet:
         print("Invalid response")
         killed_janitor(item,money,bullets,gun,been_closet)
 
-def janitors_closet(item: str, money : str, bullets : str, gun : str,been_closet:bool=False) -> None:
-    print("""You open up the janitors closet, and before you can react, a zombie jumps out at you""")
+def janitors_closet(item: str, money: str, bullets: str, gun: str, been_closet: bool=False) -> None:
+    print("""You open up the janitors closet, and before you can react, a zombie jumps out at you
+    """)
 
     response: str=input("""
         You try to 
@@ -65,11 +67,14 @@ def janitors_closet(item: str, money : str, bullets : str, gun : str,been_closet
         janitors_closet(item,money,bullets,gun,been_closet)
 
 
-def gun_store(item: str, money : str, bullets : str, gun : str) -> None:
-    print("""You go into the gun store, inside you see a counter, where an old man is chilling, 
+def gun_store(item: str, money: str, bullets: str, gun: str) -> None:
+    print(f"""You go into the gun store, inside you see a counter, where an old man is chilling, 
     you see some dead zombies behind him, and you see a rack of guns behind him, 
     You ask him how much the guns are, he tells you that the shotgun is $700,
-    the pistol is $200 and that a bullet is $50 each because of a shortage""")
+    the pistol is $200 and that a bullet is $50 each because of a shortage
+    
+    You have ${money}
+""")
     if money is None:
         print("The old man shoos you away, you dont have any money!")
         leave_through_window(item,money,bullets,gun)
@@ -115,8 +120,9 @@ def gun_store(item: str, money : str, bullets : str, gun : str) -> None:
     else:
         print("Invalid response")
         gun_store(item,money,bullets,gun)
-def continue_down_street(item: str, money : str, bullets : str, gun : str) -> None:
-    print("""You continue down the street eventually coming upon a gun store""")
+def continue_down_street(item: str, money: str, bullets: str, gun: str) -> None:
+    print("""You continue down the street eventually coming upon a gun store
+    """)
 
     response: str=input("""You can:
     1. go back
@@ -136,8 +142,9 @@ def continue_down_street(item: str, money : str, bullets : str, gun : str) -> No
     else:
         print("Invalid response")
         continue_down_street(item,money,bullets,gun)
-def fight_them(item: str, money : str, bullets : str, gun : str) -> None:
-    print("""What do you attack them with?""")
+def fight_them(item: str, money: str, bullets: str, gun: str) -> None:
+    print("""What do you attack them with?
+    """)
 
     response: str=input("""Choose one: 
     1. Fight them with hands, OR
@@ -191,9 +198,10 @@ def fight_them(item: str, money : str, bullets : str, gun : str) -> None:
     else:
         print("Invalid response")
         fight_them(item,money,bullets,gun)
-def light_tunnel(item: str, money : str, bullets : str, gun : str) -> None:
+def light_tunnel(item: str, money: str, bullets: str, gun: str) -> None:
     print("""Down the lighter tunnel you eventually come to a large checkpoint that it looks like some refuges are running, 
-    They tell you, that you have to give them $800 give you a car to escape""")
+    They tell you, that you have to give them $800 give you a car to escape
+    """)
 
     response: str=input("""You can either:
     1. You can fight them and take the car, OR 
@@ -216,8 +224,9 @@ def light_tunnel(item: str, money : str, bullets : str, gun : str) -> None:
     else:
         print("Invalid response")
         light_tunnel(item,money,bullets,gun)
-def continue_on(item: str, money : str, bullets : str, gun : str) -> None:
-    print("""You continue down the tunnel and eventually see a fork, one fork has light up ahead the other looks dark""")
+def continue_on(item: str, money: str, bullets: str, gun: str) -> None:
+    print("""You continue down the tunnel and eventually see a fork, one fork has light up ahead the other looks dark
+    """)
 
     response: str=input("""You can either:
     1. Go down the dark tunnel OR
@@ -234,9 +243,10 @@ def continue_on(item: str, money : str, bullets : str, gun : str) -> None:
     else:
         print("Invalid response")
         continue_on
-def go_subway(item: str, money : str, bullets : str, gun : str,been_closet: bool = False) -> None:
+def go_subway(item: str, money: str, bullets: str, gun: str, been_closet: bool = False) -> None:
     print("""You go down into the subway, after a while of going down the stairs, you descend down into the subway,"
-    "in front of you, you see a train tunnel and what looks like a janitors closet""")
+    "in front of you, you see a train tunnel and what looks like a janitors closet
+    """)
 
     response: str=input("""You can either:
     1. You can check the janitors closet, OR
@@ -255,13 +265,14 @@ def go_subway(item: str, money : str, bullets : str, gun : str,been_closet: bool
         print("Invalid response")
         go_subway(item,money,bullets,gun,been_closet)
 
-def exit_door(Item: str, money: str, bullets: str, gun : str):
+def exit_door(Item: str, money: str, bullets: str, gun: str):
     print("""You forget to silently close the door, and BANG, a group of zombies across the hall turn towards you and pounce, you dont stand a chance DEATH
     
     """)
     main()
 def away_from_zombies(item: str) -> None:
-    print("""once out on the street you see a couple places to go""")
+    print("""once out on the street you see a couple places to go
+    """)
 
     response: str=input("""You can either:
     1. Go left and die to zombies
@@ -282,7 +293,8 @@ def random_room(item: str) -> None:
     money: int = 600
     bullets: int = 2
     print("""luckily in the random room you find $600, and 2 bullets
-    Unluckily the window is all boarded up so you cant exit through the fire escape""")
+    Unluckily the window is all boarded up so you cant exit through the fire escape
+    """)
 
     response: str=input("""You can either:
     1. NEED AXE: break through the boards with your axe OR
@@ -301,11 +313,12 @@ def random_room(item: str) -> None:
         print("Invalid response")
         random_room
 
-def leave_through_window(item: str,money: str,bullets: str, gun : str,been_closet:bool=False) -> None:
+def leave_through_window(item: str, money: str,bullets: str, gun: str, been_closet: bool=False) -> None:
 
-    print("You are now safely out on the street")
+    print("""You are now safely out on the street
+    """)
 
-    response: str=input("""You are now behind the building would you like
+    response: str=input("""You are behind the building would you like
     to:
     1. go to the subway, OR you can 
     2. continue on looking for more things
@@ -323,7 +336,7 @@ def leave_through_door(item: str) -> None:
 
     print("""You walk out into the hallway and immediately notice some
      zombies across the hall feasting on some random dude
-     Choose a number>""")
+     """)
 
     response: str=input("""You can now either 
     1. run into a random room OR 
@@ -337,9 +350,10 @@ def leave_through_door(item: str) -> None:
     else:
         print("Invalid response")
         leave_through_door
-def choose_first_action(item: str,money: str,bullets:str,gun:str) -> None:
+def choose_first_action(item: str, money: str, bullets: str, gun: str) -> None:
 
-    print(f"""You choose the {item} but quick you need to escape!""")
+    print(f"""You choose the {item} but quick you need to escape!
+    """)
 
     response: str=input("""Now you can either
     1. leave through the window down the fire escape OR
@@ -358,7 +372,8 @@ def main() -> None:
     print("""You wake up tired groggy, you climb out of bed for your morning coffee
     and look out the window, outside on the streets you see lots of zombies,
     eating people and climbing buildings and such, you go to wash your face and
-    think about the zombies WAIT ZOMBIES?? Quick get supplies!!""")
+    think about the zombies WAIT ZOMBIES?? Quick get supplies!!
+    """)
 
     response: str=input("""grab either: 
     1. your rusty old axe, 
